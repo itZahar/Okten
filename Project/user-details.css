@@ -5,8 +5,8 @@
     display: block;
 }
 .user {
-    background-color: #cce524;
     margin-bottom: 10px;
+    border: 1px solid black;
 }
 
 .but {
@@ -18,8 +18,8 @@
     margin-left: 5%;
 }
 .title {
-    background-color: #632980;
-    width: 19%;
+    border: 1px solid black;
+    width: 18.5%;
     display: flex;
     align-items: center;
     text-align: center;
@@ -35,5 +35,6 @@ button{
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    padding-left: 0.8%;
 
 }

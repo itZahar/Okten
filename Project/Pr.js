@@ -9,9 +9,6 @@ fetch('https://jsonplaceholder.typicode.com/users')
         let divUser = document.createElement('div');
         divUser.innerHTML = `${user.id} ${user.name} `
         divUser.classList.add('pare')
-        let r = () => Math.random() * 256 >> 0;
-        let color = `rgb(${r()}, ${r()}, ${r()})`;
-        divUser.style.backgroundColor = color
         divka.appendChild(divUser);
         let but = document.createElement('button')
         but.setAttribute('class','button')
