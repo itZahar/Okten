@@ -11,34 +11,32 @@ window.onload = async function () {
                 Lat -${value.address.geo.lat} Lng -${value.address.geo.lng} <br> Phone - ${value.phone}
                 <br> Website - ${value.website} <br> Company: Name - ${value.company.name}  CatchPhrase - ${value.company.catchPhrase}
                 BS - ${value.company.bs} <br>`
-    fetch(`https://jsonplaceholder.typicode.com/users/${a}/posts`)
-        .then(response => response.json())
-        .then(value => {
-            let titles = document.createElement('div');
-            document.body.appendChild(titles)
-            titles.style.display === "none"
-            let butPost = document.createElement('button');
-            butPost.setAttribute('class','but');
-            butPost.innerHTML = `post of current user`;
-            document.body.appendChild(butPost);
-            for (let i = 0; i < value.length; i++) {
-                const post = value[i];
-                let title = document.createElement('p');
-                title.setAttribute('class','title')
-                title.innerHTML = `Title ${i+1} - ${post.title}`
-                titles.append(title);
-                let but = document.createElement('button')
-                but.setAttribute('class','button')
-                but.innerHTML = `Info`
-                title.append(but)
-                but.onclick = function (e){
-                    document.location.href = 'post-details.html';
-                }
-                titles.classList.add('hide')
-            }
-            butPost.onclick = function (){
-                titles.classList.toggle('vision',)
-                titles.classList.toggle('wrap')
-            }
-        })
+    const responsee = await fetch(`https://jsonplaceholder.typicode.com/users/${a}/posts`);
+    const valuee = await responsee.json()
+    let titles = document.createElement('div');
+    document.body.appendChild(titles)
+    titles.style.display === "none"
+    let butPost = document.createElement('button');
+    butPost.setAttribute('class','but');
+    butPost.innerHTML = `post of current user`;
+    document.body.appendChild(butPost);
+    for (let i = 0; i < valuee.length; i++) {
+        const post = valuee[i];
+        let title = document.createElement('p');
+        title.setAttribute('class','title')
+        title.innerHTML = `Title ${i+1} - ${post.title}`
+        titles.append(title);
+        let but = document.createElement('button')
+        but.setAttribute('class','button')
+        but.innerHTML = `Info`
+        title.append(but)
+        but.onclick = function (e){
+            document.location.href = 'post-details.html';
+        }
+        titles.classList.add('hide')
+    }
+    butPost.onclick = function (){
+        titles.classList.toggle('vision',)
+        titles.classList.toggle('wrap')
+    }
 }
