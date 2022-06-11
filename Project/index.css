@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    border:0
+}
+.father {
+    padding-left: 0.45%;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.pare {
+    margin: 0.1%;
+    min-width: 49.3%;
+    max-width: 49.3%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    min-height: 50px;
+    flex-wrap: wrap;
+}
+.button{
+    background-color: green;
+    border-radius: 4px;
+    width: 30px;
+    height: 20px;
+}
